@@ -68,6 +68,17 @@ class CalcShell(cmd.Cmd):
         fraction = arg.split('/')
         a = float(fraction[0]) / float(fraction[1])
         print(a)
+    def do_fractopct(self, arg):
+        '''Converts a fraction to a percentage'''
+        fraction = arg.split('/')
+        a = float(fraction[0]) / float(fraction[1])
+        a = str(a * 100)
+        print(a + '%')
+    def do_dectofrac(self, arg):
+        '''Converts a decimal/float to its fractional value'''
+        decimal = float(arg)
+        decimal = decimal.as_integer_ratio()
+        print(str(decimal[0]) + '/' + str(decimal[1]))
     # Aliases
     def do_pyth(self, arg):
         '''Alias for pythagoras function'''
@@ -78,4 +89,5 @@ class CalcShell(cmd.Cmd):
 
 
 if __name__ == '__main__':
+    os.system('title CLI Calculator - Version 1.00')
     CalcShell().cmdloop()

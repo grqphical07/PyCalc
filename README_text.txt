@@ -22,4 +22,6 @@ Functions:
         - Example: Saves ANS to a file called test.txt: save test
     - fractodec: converts a given fraction to a decimal
         - Example: fractodec 1/4 = 0.25
+    - fractopct: Converts a fraction to a percent
+    - dectofrac: Converts a decimal to its fractional form
     
