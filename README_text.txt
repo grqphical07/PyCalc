@@ -1,7 +1,5 @@
 A simple scientfic CLI Calculator with history, ANS variable and more.
 
-Plain text version of README
-
 Start by using the solve command to solve a given equation
 
 The ANS variable is the last answer done by any function
@@ -22,5 +20,6 @@ Functions:
     - pi prints out the first 16 digits of pi and can be used in equations with the solve command
     - save: Saves the ANS variable to a file
         - Example: Saves ANS to a file called test.txt: save test
-NOTE: 3(5 * 4) will not work use 3 * (5 * 4) instead
+    - fractodec: converts a given fraction to a decimal
+        - Example: fractodec 1/4 = 0.25
     

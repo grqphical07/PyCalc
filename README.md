@@ -29,4 +29,5 @@ The ANS Variable is the last answer to an equation run with any of the functions
     - pi prints out the first 16 digits of pi and can be used in equations with the solve command
     - save: Saves the ANS variable to a file
         - Example: Saves ANS to a file called test.txt: save test
-### NOTE: Things such as 3(5 * 4) will not work use 3 * (5 * 4) instead
+    - fractodec: converts a given fraction to a decimal
+      - Example: fractodec 1/4 = 0.25

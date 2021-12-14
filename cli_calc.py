@@ -10,6 +10,7 @@ class CalcShell(cmd.Cmd):
     prompt = "(calculator)>>"
 
     def set_ans(self, var):
+        '''Used to change the ANS variable'''
         self.ans = float(var)
 
     def do_solve(self, arg):
@@ -62,6 +63,11 @@ class CalcShell(cmd.Cmd):
         with open(arg + ".txt", 'w') as f:
             f.write(str(self.ans))
             print("Written to: " + arg + ".txt")
+    def do_fractodec(self, arg):
+        '''Converts a fraction to a decimal'''
+        fraction = arg.split('/')
+        a = float(fraction[0]) / float(fraction[1])
+        print(a)
     # Aliases
     def do_pyth(self, arg):
         '''Alias for pythagoras function'''
