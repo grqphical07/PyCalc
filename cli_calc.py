@@ -6,11 +6,13 @@ from decimal import Decimal
 import fractions
 import statistics
 import random
+import time
 
 
 class_list = []
 
 class CalcShell(cmd.Cmd):
+    count = 0
     # Answer variable
     with open('ANS', 'r') as f:
         ans = f.read()
@@ -23,14 +25,34 @@ class CalcShell(cmd.Cmd):
         self.ans = var
         with open('ANS', 'w') as f:
             f.write(str(var))
-
+    def zero_divide_error(self):
+        if self.count == 0:
+            print("ERROR: Cannot divide by zero")
+            self.count = self.count + 1
+        elif self.count == 1:
+            print('ERROR: Still cannot divide by zero')
+            self.count = self.count + 1
+        elif self.count == 2:
+            print('ERROR: Damn how stubborn are you??')
+            self.count = self.count + 1
+        elif self.count == 3:
+            print('ERROR: Damn bro your IQ must be below room temperature')
+            self.count = self.count + 1
+        elif self.count > 3:
+            print("Bruh Moment")
+            time.sleep(1)
+            exit()
     def do_solve(self, arg):
         '''Solves any given mathematical statement'''
         string = str(arg)
         ansstring = string.replace('ans', str(self.ans))
         pistring = ansstring.replace('pi', str(math.pi))
-        self.set_ans(float(eval(pistring)))
-        print(str(eval(pistring)))
+        try:
+            value = eval(pistring)
+            print(">>> " + str(value))
+            self.set_ans(float())
+        except (ZeroDivisionError):
+            self.zero_divide_error()
     def do_exit(self, arg):
         '''Exits the program'''
         sys.exit()
